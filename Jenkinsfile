@@ -2,7 +2,7 @@ node {
    def mvn1
    def app
    stage('Checkout') { 
-      git 'https://github.com/paulsoumi96/SpringMVC_DevOps201.git'
+      git 'https://github.com/paulsoumi96/spring-mvc-helloworld.git'
       mvn1 = tool 'MAVEN_HOME'
    }
 stage ('Build') {
@@ -21,7 +21,7 @@ stage ('Push Docker Image') {
 }
 
 stage('Run Container') {
-      sh "sudo docker run -p 8085:8080 -d paulsoumi96/devops"
+      sh "docker run -p 8084:8080 -d paulsoumi96/devops"
 }
 
 }
